@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+    <section>
+        <article>
+            <div class="container">
+                <h1> Create/update:</h1>
+                <br>
+                {{ form_start(form) }}
+
+                {{ form_row(form.name, {'attr' : {'placeholder' : 'name'}}) }}
+                {{ form_row(form.description, {'attr' : {'placeholder' : 'description'}}) }}
+                {{ form_row(form.place, {'attr' : {'placeholder' : 'place'}}) }}
+                {{ form_row(form.start, {'attr' : {'placeholder' : 'start'}}) }}
+                {{ form_row(form.end, {'attr' : {'placeholder' : 'end'}}) }}
+                {{ form_row(form.category) }}
+
+                {{ form_end(form) }}
+            </div>
+        </article>
+    </section>
+{% endblock %}

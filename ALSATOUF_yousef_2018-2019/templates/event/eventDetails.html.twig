@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ title }}{% endblock %}
+{% block body %}
+
+    <section>
+        <article>
+            <div class="container">
+                <div class="row">
+                    <h3 class="col-3">Name: </h3>
+                    {{ event.name }}
+                </div>
+
+                <div class="row">
+                    <h3 class="col-3">Description: </h3>
+                    {{ event.description | raw }}
+                </div>
+
+                <div class="row">
+                    <h3 class="col-3">Place: </h3>
+                    {{ event.place }}
+                </div>
+
+                <hr>
+
+                <div>
+                    <h>Users: </h>
+                    {% for user in event.users %}
+                        <div> NAME: {{ user.username }}</div>
+                        <div> Image: <img src="{{ user.profilePic }}" alt="here is a photo"></div>
+                    {% endfor %}
+                </div>
+
+                <div>
+                    <h3 class="col-3">CATEGORY: </h3>
+                    <div> NAME: {{ event.category.name }}</div>
+                    <div> Description: {{ event.category.description }}</div>
+                </div>
+
+                <div>
+                    <a class="btn btn-danger" href="{{ path('remove_event', {'id': event.id}) }}">Delete</a>
+                    <a class="btn btn-success" href="{{ path('edit_event', {'id': event.id}) }}">Edit</a>
+                </div>
+
+            </div>
+        </article>
+    </section>
+
+{% endblock %}
+

@@ -1,0 +1,26 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+    <section>
+        <article>
+            <div class="container">
+                <h1>Ingredients List: </h1>
+                {% for category in categories %}
+                    <h3> Name : {{ category.name }}</h3>
+                    <h3> Description : {{ category.description }}</h3>
+                    <h4>Events correspond to this category : </h4>
+
+                    <ul>
+                        {% for event in category.events %}
+                            <li>{{ event.name }}</li>
+                        {% endfor %}
+                    </ul>
+                    <hr>
+                {% endfor %}
+            </div>
+        </article>
+    </section>
+{% endblock %}
