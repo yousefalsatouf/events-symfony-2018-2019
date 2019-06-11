@@ -20,6 +20,16 @@
                     {{ event.place }}
                 </div>
 
+                <div class="row">
+                    <h3 class="col-3">Start: </h3>
+                    {{ event.start | date('d/m/y')}} at {{ event.start | date('H:i') }}
+                </div>
+
+                <div class="row">
+                    <h3 class="col-3">End: </h3>
+                    {{ event.end | date('d/m/y')}} at {{ event.end | date('H:i') }}
+                </div>
+
                 <hr>
 
                 <div>
